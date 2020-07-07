@@ -5,7 +5,7 @@ import math
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from tests.pages.locators import BaseLocators
+from tests.pages.locators import BasePageLocators
 
 
 class BasePage():
@@ -59,6 +59,10 @@ class BasePage():
             print("No second alert presented")
 
     def openBasket(self):
-        assert self.is_element_present(*BaseLocators.BASKET_LINK)
-        basket_link = self.find_element(*BaseLocators.BASKET_LINK)
+        assert self.is_element_present(*BasePageLocators.BASKET_LINK)
+        basket_link = self.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

@@ -1,11 +1,9 @@
 from selenium.webdriver.common.by import By
 
 
-class BaseLocators():
+class BasePageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, "span > a")
-
-
-class MainPageLocators():
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
@@ -15,6 +13,7 @@ class LoginPageLocators():
     REGISTRATION_EMAIL = (By.NAME, "registration-email")
     REGISTRATION_PASSWORD_1 = (By.NAME, "registration-password1")
     REGISTRATION_PASSWORD_2 = (By.NAME, "registration-password2")
+    REGISTRATION_BUTTON = (By.NAME, "registration_submit")
 
 
 class ProductPageLocators():
